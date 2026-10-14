@@ -1,0 +1,68 @@
+Q61: Search for an element in an array using linear search.*/
+
+#include <stdio.h>
+
+int main() {
+    int n, key;
+    int index = -1;
+
+    // Array size input
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Array elements input
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Element to search
+    scanf("%d", &key);
+
+    // Linear Search
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            index = i;
+            break;
+        }
+    }
+
+    // Output
+    if (index != -1) {
+        printf("Found at index %d\n", index);
+    } else {
+        printf("-1\n");
+    }
+
+    return 0;
+}
+Q62: Reverse an array without taking extra space.*/
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < n / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d", arr[i]);
+
+        if (i < n - 1) {
+            printf(" ");
+        }
+    }
+
+    return 0;
+}
